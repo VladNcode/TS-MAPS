@@ -27,7 +27,7 @@ export class CustomMap {
     return marker;
   }
 
-  addMarkerInfo(marker: google.maps.Marker, text: string) {
+  addMarkerInfo(marker: google.maps.Marker, text: string): void {
     marker.addListener('click', () => {
       const infoWindow = new google.maps.InfoWindow({
         content: text,

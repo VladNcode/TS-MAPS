@@ -3,14 +3,13 @@ import { User } from './User';
 import { Company } from './Company';
 import { CustomMap } from './CustomMap';
 
+const map = new CustomMap('map');
+
 const user = new User();
 const company = new Company();
 
-// console.log(user);
-// console.log(company);
+const userMarker = map.addMarker(user);
+const companyMarker = map.addMarker(company);
 
-const map = new CustomMap('map');
-map.addMarker(user);
-const marker = map.addMarker(company);
-
-map.addMarkerInfo(marker, 'This is a test!');
+map.addMarkerInfo(userMarker, user.markerContent());
+map.addMarkerInfo(companyMarker, company.markerContent());
